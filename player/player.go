@@ -242,6 +242,9 @@ func (a *AI) getGuess() (c board.Point) {
 }
 
 func (a *AI) Guess(p *Player, debug bool) bool {
+	board.ClearScreen()
+	p.PrintEnemy()
+	p.PrintFriendly()
 	c := a.getGuess()
 	a.Guesses = append(a.Guesses, c)
 	cprint.Printf["White"]("Now the AI's time to strike...\n")

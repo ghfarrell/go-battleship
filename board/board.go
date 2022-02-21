@@ -173,7 +173,7 @@ func (b Board) shipExistsAt(coords []Point) bool {
 func (b *Board) PlaceShip(s Ship, p Point, vertical bool) (Ship, error) {
 	switch vertical {
 	case true:
-		if p.Row+rune(s.Length) > 'j' {
+		if p.Row+rune(s.Length-1) > 'j' {
 			break
 		}
 		for i := 0; i < s.Length; i++ {
@@ -189,7 +189,7 @@ func (b *Board) PlaceShip(s Ship, p Point, vertical bool) (Ship, error) {
 		}
 		return s, nil
 	case false:
-		if p.Col+s.Length > 10 {
+		if p.Col+s.Length-1 > 10 {
 			break
 		}
 		for i := 0; i < s.Length; i++ {

@@ -30,7 +30,7 @@ import (
 	"github.com/ghfarrell/go-battleship/player"
 )
 
-func PlayerGoesFirst() bool {
+func PlayerGoesFirst() (b bool) {
 	var playerGuess int
 	for {
 		cprint.Printf["Cyan"]("Time to determine who goes first! Guess a number 1-6: ")
@@ -50,13 +50,16 @@ func PlayerGoesFirst() bool {
 	cprint.Printf["Cyan"]("The AI guessed %d, so the winner is...\n", aiGuess)
 	if math.Abs(float64(r-playerGuess)) < math.Abs(float64(r-aiGuess)) {
 		cprint.Printf["Cyan"]("You! You will make your strike first.\n")
+		b = true
 	} else if math.Abs(float64(r-playerGuess)) == math.Abs(float64(r-aiGuess)) {
 		cprint.Printf["Cyan"]("You... via tiebreaker!\nYou both guessed %d, but I like you more than the AI.\n", playerGuess)
+		b = true
 	} else {
 		cprint.Printf["Cyan"]("The AI! Too bad! They will strike first.\n")
+		b = false
 	}
 	time.Sleep(3 * time.Second)
-	return true
+	return
 }
 
 func playerWin() {

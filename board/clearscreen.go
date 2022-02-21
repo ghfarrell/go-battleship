@@ -23,7 +23,7 @@ func PrintLogo() {
 	cprint.Printf["Magenta"]("|  $$$$$$ | $$$$$$$$  | $$  | $$$$$$$/\n")
 	cprint.Printf["Magenta"](" \\____  $$| $$__  $$  | $$  | $$____/ \n")
 	cprint.Printf["Magenta"](" /$$  \\ $$| $$  | $$  | $$  | $$     \n")
-	cprint.Printf["Magenta"]("   $$$$$$/| $$  | $$ /$$$$$$| $$      \n")
+	cprint.Printf["Magenta"]("|  $$$$$$/| $$  | $$ /$$$$$$| $$      \n")
 	cprint.Printf["Magenta"](" \\______/ |__/  |__/|______/|__/  \n")
 	cprint.Printf["Red"]("Press ctrl + c at any time to quit.\n\n")
 }
